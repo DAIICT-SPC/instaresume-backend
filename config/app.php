@@ -171,11 +171,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        InstaResume\Providers\AppServiceProvider::class,
+        InstaResume\Providers\AuthServiceProvider::class,
+        // InstaResume\Providers\BroadcastServiceProvider::class,
+        InstaResume\Providers\EventServiceProvider::class,
+        InstaResume\Providers\RouteServiceProvider::class,
 
     ],
 

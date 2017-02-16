@@ -13,10 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::post('/generate', function(Request $request) {
-    return ["data" => "Hello"];
-});
+Route::any('/generate', ['uses' => "ResumeController@generate"]);
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
