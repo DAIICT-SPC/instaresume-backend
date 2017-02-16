@@ -92,10 +92,7 @@ class ResumeController extends Controller
             "Organizing and Attending Hackathons"
         ];
 
-        $view = view('template', compact('student'));
-
-        $html = $view->render();
-        $pdf->loadHTML($html);
+        $pdf->loadView('template', compact('student'));
         return $pdf->stream("resume.pdf");
     }
 
