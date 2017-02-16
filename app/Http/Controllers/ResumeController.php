@@ -13,13 +13,17 @@ class ResumeController extends Controller
     {
         $pdf = app('dompdf.wrapper');
 
-        $name = "John Doe";
-        $email = "#########@daiict.ac.in";
-        $address = "My address";
-        $dob = "February 29, 1600";
-        $expertise = "Web Development, API Development, Open Source";
-        $programming_languages = "PHP, JavaScript, Java, C";
-        $tools = "Laravel, VueJS, Gulp, Socket.io, ReactJS, Github, AWS, Digital Ocean";
+        $data = $request->only('user_id', 'resume');
+        $resume = $data['resume'];
+        $user_id = $data['user_id'];
+
+        $name = $resume['info']['name'];
+        $email = $resume['info']['email'];
+        $address = $resume['info']['address'];
+        $dob = $resume['info']['dob'];
+        $expertise = $resume['skill']['expertise'];
+        $programming_languages = $resume['skill']['programming_languages'];
+        $tools = $resume['skill']['tools'];
 
         $student = new Student(
             $name,
@@ -31,45 +35,18 @@ class ResumeController extends Controller
             $tools
         );
 
-        $degrees = [
-            [
-                "name" => "BSc. (IT)",
-                "institute" => "Department of Computer Science",
-                "duration" => "2013 - 2016",
-                "score" => "8.01",
-            ],
-            [
-                "name" => "Intermediate/+2",
-                "institute" => "St. Ann's High School",
-                "duration" => "2011 - 2013",
-                "score" => "72.00%",
-            ],
-            [
-                "name" => "High School",
-                "institute" => "St. Ann's High School",
-                "duration" => "2010 - 2011",
-                "score" => "81.00%",
-            ]
-        ];
+        $degrees = $resume['degrees'];
 
         foreach ($degrees as $degree) {
             $student->degrees[] = new Degree(
                 $degree['name'],
                 $degree['institute'],
-                $degree['duration'],
+                $degree['year'],
                 $degree['score']
             );
         }
 
-        $projects = [
-            [
-                "title" => "Pracly",
-                "description" => "Pracly provides on Demand business advice to startups",
-                "start" => "Sept, 13",
-                "end" => "Feb, 15",
-                "team_size" => "5",
-            ]
-        ];
+        $projects = $resume['projects'];
 
         foreach ($projects as $project) {
             $student->projects[] = new Project(
@@ -81,19 +58,17 @@ class ResumeController extends Controller
             );
         }
 
-        $student->awards = [
-            "Runner up at HackBaroda",
-            "Judge at Hackathon organized by IIT Gandhinagar"
-        ];
+        $student->awards = $resume['awards'];
 
-        $student->hobbies = [
-            "Playing Soccer",
-            "Contributing to Open Source",
-            "Organizing and Attending Hackathons"
-        ];
+        $student->hobbies = $resume['hobbies'];
 
         $pdf->loadView('template', compact('student'));
-        return $pdf->stream("resume.pdf");
+
+        $filename = "uploads/resumes/" . $user_id . ".pdf";
+
+        $pdf->save($filename);
+
+        return response()->json(['url' => url($filename)]);
     }
 
 }
