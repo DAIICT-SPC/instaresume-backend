@@ -22,7 +22,7 @@ class ApiAuthMiddleware
         $token = $request->get('token');
         $api_key = env('API_KEY', '');
 
-        if (!\Hash::check($token, $api_key)) {
+        if ($token !== $api_key) {
             abort(403, "Unauthorized");
         }
 
