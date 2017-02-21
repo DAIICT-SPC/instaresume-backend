@@ -3,13 +3,14 @@ namespace InstaResume\Http\Controllers;
 
 use Illuminate\Http\Request;
 use InstaResume\Degree;
+use InstaResume\Http\Requests\GenerateRequest;
 use InstaResume\Project;
 use InstaResume\Student;
 
 class ResumeController extends Controller
 {
 
-    public function generate(Request $request)
+    public function generate(GenerateRequest $request)
     {
         $pdf = app('dompdf.wrapper');
 
