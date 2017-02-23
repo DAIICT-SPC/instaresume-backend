@@ -4,10 +4,10 @@ namespace InstaResume;
 class Project
 {
     /**
-     * Project title
+     * Project name
      * @var string
      */
-    public $title;
+    public $name;
 
     /**
      * Project description
@@ -36,15 +36,15 @@ class Project
     /**
      * Project constructor.
      *
-     * @param string $title
+     * @param string $name
      * @param string $description
      * @param string $start
      * @param string $end
      * @param string $team_size
      */
-    public function __construct($title, $description, $start, $end, $team_size)
+    public function __construct($name, $description, $start, $end, $team_size)
     {
-        $this->title = $title;
+        $this->name = $name;
         $this->description = $description;
         $this->start = $start;
         $this->end = $end;

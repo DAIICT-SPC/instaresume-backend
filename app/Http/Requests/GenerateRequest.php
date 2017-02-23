@@ -36,7 +36,7 @@ class GenerateRequest extends FormRequest
             'resume.degrees.*.institute' => "required",
             'resume.degrees.*.year' => "required",
             'resume.degrees.*.score' => "required",
-            'resume.projects.*.title' => "required",
+            'resume.projects.*.name' => "required",
             'resume.projects.*.description' => "required",
             'resume.projects.*.start' => "required",
             'resume.projects.*.end' => "required",

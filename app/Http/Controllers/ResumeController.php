@@ -51,7 +51,7 @@ class ResumeController extends Controller
 
         foreach ($projects as $project) {
             $student->projects[] = new Project(
-                $project['title'],
+                $project['name'],
                 $project['description'],
                 $project['start'],
                 $project['end'],
