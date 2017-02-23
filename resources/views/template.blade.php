@@ -136,7 +136,7 @@
                 <ul class="list">
                     @foreach($student->awards as $award)
                         <li>
-                            {{$award}}
+                            {{$award->name}}
                         </li>
                     @endforeach
                 </ul>
@@ -155,7 +155,7 @@
                 <ul class="list">
                     @foreach($student->hobbies as $hobby)
                         <li>
-                            {{$hobby}}
+                            {{$hobby->name}}
                         </li>
                     @endforeach
                 </ul>
