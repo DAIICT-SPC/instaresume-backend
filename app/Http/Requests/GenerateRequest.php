@@ -1,6 +1,7 @@
 <?php
 namespace InstaResume\Http\Requests;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 
 class GenerateRequest extends FormRequest
@@ -32,13 +33,13 @@ class GenerateRequest extends FormRequest
             'resume.skill.expertise' => "required",
             'resume.skill.programming_languages' => "required",
             'resume.skill.tools' => "required",
-            'resume.degrees.*.name' => "required",
-            'resume.degrees.*.institute' => "required",
-            'resume.degrees.*.year' => "required",
+            'resume.degrees.*.name' => "required_with:resume.degrees",
+            'resume.degrees.*.institute' => "required_with:resume.degrees",
+            'resume.degrees.*.year' => "required_with:resume.degrees",
             'resume.degrees.*.score' => "",
-            'resume.projects.*.name' => "required",
-            'resume.projects.*.description' => "required",
-            'resume.projects.*.start' => "required",
+            'resume.projects.*.name' => "required_with:resume.degrees",
+            'resume.projects.*.description' => "required_with:resume.degrees",
+            'resume.projects.*.start' => "required_with:resume.degrees",
             'resume.projects.*.end' => "",
             'resume.projects.*.team_size' => ""
         ];
