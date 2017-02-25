@@ -35,12 +35,12 @@ class GenerateRequest extends FormRequest
             'resume.degrees.*.name' => "required",
             'resume.degrees.*.institute' => "required",
             'resume.degrees.*.year' => "required",
-            'resume.degrees.*.score' => "required",
+            'resume.degrees.*.score' => "",
             'resume.projects.*.name' => "required",
             'resume.projects.*.description' => "required",
             'resume.projects.*.start' => "required",
-            'resume.projects.*.end' => "required",
-            'resume.projects.*.team_size' => "required"
+            'resume.projects.*.end' => "",
+            'resume.projects.*.team_size' => ""
         ];
     }
 }
