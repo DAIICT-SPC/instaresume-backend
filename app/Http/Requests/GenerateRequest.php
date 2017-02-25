@@ -25,23 +25,7 @@ class GenerateRequest extends FormRequest
     {
         return [
             'user_id' => "required",
-            'resume' => "required",
-            'resume.info.name' => "required",
-            'resume.info.email' => "required|email",
-            'resume.info.address' => "required",
-            'resume.info.dob' => "required",
-            'resume.skill.expertise' => "required",
-            'resume.skill.programming_languages' => "required",
-            'resume.skill.tools' => "required",
-            'resume.degrees.*.name' => "required_with:resume.degrees",
-            'resume.degrees.*.institute' => "required_with:resume.degrees",
-            'resume.degrees.*.year' => "required_with:resume.degrees",
-            'resume.degrees.*.score' => "",
-            'resume.projects.*.name' => "required_with:resume.degrees",
-            'resume.projects.*.description' => "required_with:resume.degrees",
-            'resume.projects.*.start' => "required_with:resume.degrees",
-            'resume.projects.*.end' => "",
-            'resume.projects.*.team_size' => ""
+            'resume' => "required"
         ];
     }
 }
