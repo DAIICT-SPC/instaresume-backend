@@ -103,6 +103,37 @@
     <table class="w-100 section">
         <tr>
             <td colspan="2" class="section-header">
+                <h3>PROFESSIONAL EXPERIENCE/INTERNSHIPS</h3>
+            </td>
+        </tr>
+        @foreach($student->internships as $internship)
+            <tr>
+                <td class="w-80" valign="top">
+                    <p>
+                        <b>{{$internship->name}}</b>
+                    </p>
+                    <p>
+                        {{$internship->description}}
+                        @if($internship->guide)
+                            <br>
+                            <i>
+                                Guide: {{$internship->guide}}
+                            </i>
+                        @endif
+                    </p>
+                </td>
+                <td class="w-20" valign="top">
+                    <p>({{$internship->start}} - {{$internship->end}})</p>
+                    @if($internship->team_size)
+                        <p>Team Size - {{$internship->team_size}}</p>
+                    @endif
+                </td>
+            </tr>
+        @endforeach
+    </table>
+    <table class="w-100 section">
+        <tr>
+            <td colspan="2" class="section-header">
                 <h3>PROJECTS</h3>
             </td>
         </tr>
@@ -114,6 +145,10 @@
                     </p>
                     <p>
                         {{$project->description}}
+                        @if($project->guide)
+                            <br>
+                            <i>Guide: {{$project->guide}}</i>
+                        @endif
                     </p>
                 </td>
                 <td class="w-20" valign="top">
