@@ -34,21 +34,29 @@ class Project
     public $team_size;
 
     /**
+     * Project guide
+     * @var string|null
+     */
+    public $guide;
+
+    /**
      * Project constructor.
      *
-     * @param string $name
-     * @param string $description
-     * @param string $start
-     * @param string $end
-     * @param string $team_size
+     * @param string      $name
+     * @param string      $description
+     * @param string      $start
+     * @param string      $end
+     * @param string      $team_size
+     * @param string|null $guide
      */
-    public function __construct($name, $description, $start, $end, $team_size)
+    public function __construct($name, $description, $start, $end, $team_size, $guide = null)
     {
         $this->name = $name;
         $this->description = $description;
         $this->start = $start;
         $this->end = $end;
         $this->team_size = $team_size;
+        $this->guide = $guide;
     }
 
 
