@@ -3,6 +3,7 @@ namespace InstaResume\Http\Controllers;
 
 use InstaResume\Degree;
 use InstaResume\Http\Requests\GenerateRequest;
+use InstaResume\Internship;
 use InstaResume\Project;
 use InstaResume\Student;
 
@@ -38,6 +39,10 @@ class ResumeController extends Controller
         $degrees = $resume['degrees'];
 
         $student->degrees = $this->getDegrees($degrees);
+
+        $internships = $resume['internships'];
+
+        $student->internships = $this->getInternships($internships);
 
         $projects = $resume['projects'];
 
@@ -86,12 +91,33 @@ class ResumeController extends Controller
                     $project['description'],
                     $project['start'],
                     $project['end'],
-                    $project['team_size']
+                    $project['team_size'],
+                    $project['guide']
                 );
             }
         }
 
         return $studentProjects;
+    }
+
+    protected function getInternships($internships)
+    {
+        $studentInternships = [];
+
+        if (count($internships) > 0) {
+            foreach ($internships as $internship) {
+                $studentInternships[] = new Internship(
+                    $internship['name'],
+                    $internship['description'],
+                    $internship['start'],
+                    $internship['end'],
+                    $internship['team_size'],
+                    $internship['guide']
+                );
+            }
+        }
+
+        return $studentInternships;
     }
 
 }
