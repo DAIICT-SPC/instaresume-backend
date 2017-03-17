@@ -67,6 +67,13 @@ class Student
     public $projects = [];
 
     /**
+     * Student internships
+     *
+     * @var array
+     */
+    public $internships = [];
+
+    /**
      * Student awards
      *
      * @var array
