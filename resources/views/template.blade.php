@@ -99,104 +99,116 @@
             </td>
         </tr>
     </table>
-    <div class="page-break"></div>
-    <table class="w-100 section">
-        <tr>
-            <td colspan="2" class="section-header">
-                <h3>PROFESSIONAL EXPERIENCE/INTERNSHIPS</h3>
-            </td>
-        </tr>
-        @foreach($student->internships as $internship)
-            <tr>
-                <td class="w-80" valign="top">
-                    <p>
-                        <b>{{$internship->name}}</b>
-                    </p>
-                    <p>
-                        {{$internship->description}}
-                        @if($internship->guide)
-                            <br>
-                            <i>
-                                Guide: {{$internship->guide}}
-                            </i>
-                        @endif
-                    </p>
-                </td>
-                <td class="w-20" valign="top">
-                    <p>({{$internship->start}} - {{$internship->end}})</p>
-                    @if($internship->team_size)
-                        <p>Team Size - {{$internship->team_size}}</p>
-                    @endif
-                </td>
-            </tr>
-        @endforeach
-    </table>
-    <table class="w-100 section">
-        <tr>
-            <td colspan="2" class="section-header">
-                <h3>PROJECTS</h3>
-            </td>
-        </tr>
-        @foreach($student->projects as $project)
-            <tr>
-                <td class="w-80" valign="top">
-                    <p>
-                        <b>{{$project->name}}</b>
-                    </p>
-                    <p>
-                        {{$project->description}}
-                        @if($project->guide)
-                            <br>
-                            <i>Guide: {{$project->guide}}</i>
-                        @endif
-                    </p>
-                </td>
-                <td class="w-20" valign="top">
-                    <p>({{$project->start}} - {{$project->end}})</p>
-                    @if($project->team_size)
-                        <p>Team Size - {{$project->team_size}}</p>
-                    @endif
-                </td>
-            </tr>
-        @endforeach
-    </table>
-    <table class="w-100 section">
-        <tr>
-            <td colspan="2" class="section-header">
-                <h3>AWARDS AND ACHIEVEMENTS</h3>
-            </td>
-        </tr>
-        <tr>
-            <td valign="top">
-                <ul class="list">
-                    @foreach($student->awards as $award)
-                        <li>
-                            {{$award['name']}}
-                        </li>
-                    @endforeach
-                </ul>
-            </td>
-        </tr>
-    </table>
 
-    <table class="w-100 section">
-        <tr>
-            <td colspan="2" class="section-header">
-                <h3>INTERESTS AND HOBBIES</h3>
-            </td>
-        </tr>
-        <tr>
-            <td valign="top">
-                <ul class="list">
-                    @foreach($student->hobbies as $hobby)
-                        <li>
-                            {{$hobby['name']}}
-                        </li>
-                    @endforeach
-                </ul>
-            </td>
-        </tr>
-    </table>
+    <div class="page-break"></div>
+
+    @if(count($student->internships))
+        <table class="w-100 section">
+            <tr>
+                <td colspan="2" class="section-header">
+                    <h3>PROFESSIONAL EXPERIENCE/INTERNSHIPS</h3>
+                </td>
+            </tr>
+            @foreach($student->internships as $internship)
+                <tr>
+                    <td class="w-80" valign="top">
+                        <p>
+                            <b>{{$internship->name}}</b>
+                        </p>
+                        <p>
+                            {{$internship->description}}
+                            @if($internship->guide)
+                                <br>
+                                <i>
+                                    Guide: {{$internship->guide}}
+                                </i>
+                            @endif
+                        </p>
+                    </td>
+                    <td class="w-20" valign="top">
+                        <p>({{$internship->start}} - {{$internship->end}})</p>
+                        @if($internship->team_size)
+                            <p>Team Size - {{$internship->team_size}}</p>
+                        @endif
+                    </td>
+                </tr>
+            @endforeach
+        </table>
+    @endif
+
+    @if(count($student->projects))
+        <table class="w-100 section">
+            <tr>
+                <td colspan="2" class="section-header">
+                    <h3>PROJECTS</h3>
+                </td>
+            </tr>
+            @foreach($student->projects as $project)
+                <tr>
+                    <td class="w-80" valign="top">
+                        <p>
+                            <b>{{$project->name}}</b>
+                        </p>
+                        <p>
+                            {{$project->description}}
+                            @if($project->guide)
+                                <br>
+                                <i>Guide: {{$project->guide}}</i>
+                            @endif
+                        </p>
+                    </td>
+                    <td class="w-20" valign="top">
+                        <p>({{$project->start}} - {{$project->end}})</p>
+                        @if($project->team_size)
+                            <p>Team Size - {{$project->team_size}}</p>
+                        @endif
+                    </td>
+                </tr>
+            @endforeach
+        </table>
+    @endif
+
+    @if(count($student->awards))
+        <table class="w-100 section">
+            <tr>
+                <td colspan="2" class="section-header">
+                    <h3>AWARDS AND ACHIEVEMENTS</h3>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    <ul class="list">
+                        @foreach($student->awards as $award)
+                            <li>
+                                {{$award['name']}}
+                            </li>
+                        @endforeach
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    @endif
+
+    @if(count($student->hobbies))
+        <table class="w-100 section">
+            <tr>
+                <td colspan="2" class="section-header">
+                    <h3>INTERESTS AND HOBBIES</h3>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    <ul class="list">
+                        @foreach($student->hobbies as $hobby)
+                            <li>
+                                {{$hobby['name']}}
+                            </li>
+                        @endforeach
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    @endif
 
 </div>
 
