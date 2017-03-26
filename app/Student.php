@@ -123,7 +123,7 @@ class Student
         $this->expertise = $expertise;
         $this->programming_languages = $programming_languages;
         $this->tools = $tools;
-        $this->$technical_electives = $technical_electives;
+        $this->technical_electives = $technical_electives;
     }
 
 }

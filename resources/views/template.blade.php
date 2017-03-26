@@ -98,14 +98,17 @@
                 {{$student->tools}}
             </td>
         </tr>
-        <tr>
-            <td class="w-30">
-                <b>Technical Elective(s)</b>
-            </td>
-            <td class="w-70">
-                {{$student->technical_electives}}
-            </td>
-        </tr>
+
+        @if($student->technical_electives)
+            <tr>
+                <td class="w-30">
+                    <b>Technical Elective(s)</b>
+                </td>
+                <td class="w-70">
+                    {{$student->technical_electives}}
+                </td>
+            </tr>
+        @endif
     </table>
 
     <div class="page-break"></div>
@@ -181,7 +184,7 @@
     @if(count($student->positions))
         <table class="w-100 section">
             <tr>
-                <td colspan="2" class="section-header">
+                <td colspan="1" class="section-header">
                     <h3>POSITION OF RESPONSIBILITY</h3>
                 </td>
             </tr>
@@ -202,7 +205,7 @@
     @if(count($student->awards))
         <table class="w-100 section">
             <tr>
-                <td colspan="2" class="section-header">
+                <td colspan="1" class="section-header">
                     <h3>AWARDS AND ACHIEVEMENTS</h3>
                 </td>
             </tr>
@@ -223,7 +226,7 @@
     @if(count($student->hobbies))
         <table class="w-100 section">
             <tr>
-                <td colspan="2" class="section-header">
+                <td colspan="1" class="section-header">
                     <h3>INTERESTS AND HOBBIES</h3>
                 </td>
             </tr>
