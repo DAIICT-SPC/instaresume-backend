@@ -88,6 +88,13 @@ class Student
     public $hobbies = [];
 
     /**
+     * Student positions
+     *
+     * @var array
+     */
+    public $positions = [];
+
+    /**
      * Student constructor.
      *
      * @param string $name

@@ -52,6 +52,8 @@ class ResumeController extends Controller
 
         $student->hobbies = $resume['hobbies'];
 
+        $student->positions= $resume['positions'];
+
         $pdf->loadView('template', compact('student'));
 
         $filename = "uploads/resumes/" . $user_id . ".pdf";

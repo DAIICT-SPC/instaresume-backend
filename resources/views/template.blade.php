@@ -168,6 +168,29 @@
         </table>
     @endif
 
+    <div class="page-break"></div>
+
+    @if(count($student->positions))
+        <table class="w-100 section">
+            <tr>
+                <td colspan="2" class="section-header">
+                    <h3>POSITION OF RESPONSIBILITY</h3>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    <ul class="list">
+                        @foreach($student->positions as $position)
+                            <li>
+                                {{$position['name']}}
+                            </li>
+                        @endforeach
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    @endif
+
     @if(count($student->awards))
         <table class="w-100 section">
             <tr>
