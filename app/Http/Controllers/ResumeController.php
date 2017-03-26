@@ -25,6 +25,7 @@ class ResumeController extends Controller
         $expertise = $resume['skill']['expertise'];
         $programming_languages = $resume['skill']['programming_languages'];
         $tools = $resume['skill']['tools'];
+        $technical_electives = $resume['skill']['technical_electives'];
 
         $student = new Student(
             $name,
@@ -33,7 +34,8 @@ class ResumeController extends Controller
             $address,
             $expertise,
             $programming_languages,
-            $tools
+            $tools,
+            $technical_electives
         );
 
         $degrees = $resume['degrees'];

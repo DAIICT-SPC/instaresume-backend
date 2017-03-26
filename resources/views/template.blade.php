@@ -98,6 +98,14 @@
                 {{$student->tools}}
             </td>
         </tr>
+        <tr>
+            <td class="w-30">
+                <b>Technical Elective(s)</b>
+            </td>
+            <td class="w-70">
+                {{$student->technical_electives}}
+            </td>
+        </tr>
     </table>
 
     <div class="page-break"></div>

@@ -60,6 +60,13 @@ class Student
     public $tools;
 
     /**
+     * Student technical_electives
+     *
+     * @var string
+     */
+    public $technical_electives;
+
+    /**
      * Student projects
      *
      * @var array
@@ -104,8 +111,10 @@ class Student
      * @param string $expertise
      * @param string $programming_languages
      * @param string $tools
+     * @param string $technical_electives
      */
-    public function __construct($name, $email, $dob, $address, $expertise, $programming_languages, $tools)
+    public function __construct($name, $email, $dob, $address, $expertise, $programming_languages, $tools,
+                                $technical_electives)
     {
         $this->name = $name;
         $this->email = $email;
@@ -114,7 +123,7 @@ class Student
         $this->expertise = $expertise;
         $this->programming_languages = $programming_languages;
         $this->tools = $tools;
+        $this->$technical_electives = $technical_electives;
     }
-
 
 }
