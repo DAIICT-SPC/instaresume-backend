@@ -72,6 +72,7 @@
                 <h3>SKILLS</h3>
             </td>
         </tr>
+        @if($student->expertise)
         <tr>
             <td class="w-30">
                 <b>Expertise Area/Area(s) of
@@ -81,6 +82,8 @@
                 {{$student->expertise}}
             </td>
         </tr>
+        @endif
+        @if($student->programming_languagess)
         <tr>
             <td class="w-30">
                 <b>Programming Language(s)</b>
@@ -89,6 +92,8 @@
                 {{$student->programming_languages}}
             </td>
         </tr>
+        @endif
+        @if($student->tools)
         <tr>
             <td class="w-30">
                 <b>Tools and
@@ -98,6 +103,7 @@
                 {{$student->tools}}
             </td>
         </tr>
+        @endif
 
         @if($student->technical_electives)
             <tr>
