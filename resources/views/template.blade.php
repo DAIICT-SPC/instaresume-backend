@@ -73,36 +73,36 @@
             </td>
         </tr>
         @if($student->expertise)
-        <tr>
-            <td class="w-30">
-                <b>Expertise Area/Area(s) of
-                    Interest</b>
-            </td>
-            <td class="w-70">
-                {{$student->expertise}}
-            </td>
-        </tr>
+            <tr>
+                <td class="w-30">
+                    <b>Expertise Area/Area(s) of
+                        Interest</b>
+                </td>
+                <td class="w-70">
+                    {{$student->expertise}}
+                </td>
+            </tr>
         @endif
-        @if($student->programming_languagess)
-        <tr>
-            <td class="w-30">
-                <b>Programming Language(s)</b>
-            </td>
-            <td class="w-70">
-                {{$student->programming_languages}}
-            </td>
-        </tr>
+        @if($student->programming_languages)
+            <tr>
+                <td class="w-30">
+                    <b>Programming Language(s)</b>
+                </td>
+                <td class="w-70">
+                    {{$student->programming_languages}}
+                </td>
+            </tr>
         @endif
         @if($student->tools)
-        <tr>
-            <td class="w-30">
-                <b>Tools and
-                    Technologies</b>
-            </td>
-            <td class="w-70">
-                {{$student->tools}}
-            </td>
-        </tr>
+            <tr>
+                <td class="w-30">
+                    <b>Tools and
+                        Technologies</b>
+                </td>
+                <td class="w-70">
+                    {{$student->tools}}
+                </td>
+            </tr>
         @endif
 
         @if($student->technical_electives)
